@@ -1,0 +1,74 @@
+public class CiclosDeDecision {
+
+		//defuse, nop, seefuture, skip, mezcla, ataque, favor
+	
+	
+	public int gatoBomba=0;
+	
+	public int defuse=1;
+	
+	public int nop=2;
+	
+	public int seefuture=3;
+	
+	public int skip=4;
+	
+	public int mezcla=5;
+	
+	public int ataque=6;
+	
+	public int favor=7;
+	
+	
+	public int tipocarta;
+	
+	public int mazo;
+	
+	public boolean gameOver=false;
+	
+	public int mazoMaquina;
+	
+	public int contadorTurnero=0;
+	public void decision() {
+		
+		if(tipocarta==gatoBomba&&mazo==defuse||mazoMaquina==defuse) {
+			defuse=0;
+			mazo=defuse;
+			gameOver=false;
+		}else gameOver=true;
+		
+		if(mazo==tipocarta&&tipocarta==defuse&&mazoMaquina==nop) {
+			defuse=0;
+			mazo=defuse;
+			gameOver=true;
+			
+		}
+		if(mazoMaquina==tipocarta&&mazo==tipocarta&&tipocarta==nop&&mazoMaquina==nop) {
+			nop--;
+			mazo=nop;
+			mazoMaquina=nop;
+			
+		}
+		if(mazoMaquina==tipocarta||mazo==tipocarta&&tipocarta==skip) {
+			contadorTurnero++;
+		}
+		if(mazo==tipocarta&&tipocarta==favor) {
+			mazoMaquina--;
+		}
+		if(mazoMaquina==tipocarta&&tipocarta==favor) {
+			mazo--;
+		}
+		
+		if (mazo==tipocarta&&tipocarta==seefuture) {
+			//trigger seefuture
+		}
+		if (mazoMaquina==tipocarta&&tipocarta==seefuture) {
+			//trigger seefuture 
+		}
+		if (mazo==tipocarta||mazoMaquina==tipocarta&&tipocarta==mezcla) {
+			//random de la baraja con la carta ingresada
+		}
+		
+	}
+}
+//intentar implementar los ciclos con las enumeraciones de las cartas, el ciclo es completamente lineal y se da por orden de entrada de datos

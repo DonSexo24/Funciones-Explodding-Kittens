@@ -1,0 +1,27 @@
+package basic;
+
+import javax.swing.*;
+public class turnero extends JPanel {
+
+	 JPanel panel;
+	 JPanel panelInferior;
+	
+	//private int contador=0;
+	
+	
+	public void actdes(){
+		
+		
+		for (int contador=0;contador<100;contador++) {
+			if (contador%2==0) {
+				panelInferior.setVisible(true);
+				panel.setVisible(false);
+			}else
+				panel.setVisible(true);
+				panelInferior.setVisible(false);
+			
+			
+		}
+	}
+}
+//solo copiar el metodo
